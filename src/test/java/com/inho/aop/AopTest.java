@@ -2,9 +2,9 @@ package com.inho.aop;
 
 import com.inho.aop.order.OrderRepository;
 import com.inho.aop.order.OrderService;
-import com.inho.aop.order.aop.AspectV1;
+import com.inho.aop.order.aop.AspectV5Order;
+import com.inho.aop.order.aop.AspectV6Advice;
 import lombok.extern.slf4j.Slf4j;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 
 @Slf4j
 @SpringBootTest
-@Import(AspectV1.class)
+@Import({AspectV6Advice.class})
 public class AopTest {
     @Autowired
     OrderService orderService;
